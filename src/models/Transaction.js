@@ -10,7 +10,7 @@ const transactionSchema = new mongoose.Schema(
     receiver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      // Optional now because we might have BILL_PAY or WITHDRAW where receiver is not a user
+      // Optional because we might have BILL_PAY or WITHDRAW where receiver is not a user
     },
     // New Feature: Keep track of transaction types
     type: {
@@ -19,7 +19,7 @@ const transactionSchema = new mongoose.Schema(
       default: 'TRANSFER',
     },
     billerName: {
-      type: String, // e.g. "Jio Mobile Recharge" or "Adani Electricity"
+      type: String, // e.g. "Jio Mobile Recharge"
     },
     amount: {
       type: Number,
